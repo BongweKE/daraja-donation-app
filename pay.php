@@ -1,10 +1,9 @@
 <?php
 $url = "https://7c01-197-232-61-207.ngrok.io";
 function generateToken(){
-    $consumerKey='*************************';
-    $consumerSecret="*******************";
-    $credentials = base64_encode('$consumerKey.':'.$consumerSecret)');
-    //$credentials = REPLACEMENT;
+    $consumerKey='***********';
+    $consumerSecret='*************';
+    $credentials = base64_encode($consumerKey.':'.$consumerSecret);
     $ch = curl_init('https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials');
     curl_setopt($ch, CURLOPT_HTTPHEADER, ['Authorization: Basic '.$credentials]);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -29,7 +28,7 @@ function customerMpesaSTKPush($phone,$amt)
         $AccountReference='DONATE';
         $TransactionDesc='GIVE SOME DONATIONS';
         $Amount=$amt;
-        $Passkey="bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919";
+        $Passkey="bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919";//test passkey for daraja sandbox apps
         $Password=base64_encode($BusinessShortCode.$Passkey.$Timestamp);
         $ch = curl_init('https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest');
 
