@@ -1,7 +1,7 @@
 # SIMPLE DONATIONS SITE TO TEST DARAJA 2.0(MPESA) API
 
 ## MPESA FILES
-*donation.php* requires *pay.php* which has the two functions:\
+*donation.php* requires *pay.php* which has the two functions:
 - customerMpesaSTKPush($phone,$amt) is the main function. It takes in customer details then\
   calls the subordinate function to generate a token before actually initializing the\
   transaction. It is setup to work with dummy variables from test/sandbox.
